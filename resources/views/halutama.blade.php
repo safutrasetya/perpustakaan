@@ -11,8 +11,8 @@
     <title></title>
   </head>
   <body>
-    <div style="background-colour:rgb(66,211,182);"><!--entah kenapa ga dapet warnanya...-->
-      <div class="container-xl bg-dark p-5 opacity-3">
+    <div class="bg-gradient-primary"><!--entah kenapa ga dapet warnanya...-->
+      <div class="container-xl bg-dark pt-2 px-5 pb-5 opacity-3">
         <div class="jumbotron bg-primary">
           <marquee behavior="scroll" direction="left" scrollamount="20">
           			<h1 class="display-1">Welcome to Perpus [insert name here]</h1>

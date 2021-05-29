@@ -22,3 +22,6 @@ Route::get('/halutama', function() {
 Route::get('/test', function(){
   return view('test');
 });
+Route::get('/member', function(){
+  return view('halprofmember');
+});
