@@ -19,7 +19,7 @@ class CreateAkunsTable extends Migration
             $table->string ('username', 20);
             $table->string ('email');
             $table->string ('password', 16);
-            // $table->('level');
+            $table->integer('level');
         });
 
     }
