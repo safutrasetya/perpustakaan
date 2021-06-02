@@ -21,9 +21,10 @@ class CreateTabelBukusTable extends Migration
             $table->string('judul');
             $table->string('penerbit');
             $table->string('pengarang');
-            $table->unsignedInteger('Tahun_Terbit');
+            $table->string('Tahun_Terbit');
             $table->text('sinopsis');
             $table->string('toko')->nullable();
+            $table->timestamps();
         });
     }
 
