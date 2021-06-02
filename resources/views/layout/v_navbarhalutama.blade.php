@@ -13,7 +13,7 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-    <img src="https://s.clipartkey.com/mpngs/s/157-1572285_logo-buku-terbuka.png" width="50" height="50" alt="Malas Ngoding">
+    <img src="https://s.clipartkey.com/mpngs/s/157-1572285_logo-buku-terbuka.png" width="80" height="50" alt="Malas Ngoding">
     LIBRARY
     </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,18 +26,18 @@
           <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/haldaftarakun">DAFTAR AKUN</a>
+          <a class="nav-link" href="/about">ABOUT</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="/haldaftarbuku">DAFTAR BUKU</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/about">ABOUT</a>
+        <a class="nav-link" href="/haldaftarakun">DAFTAR AKUN</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <a class="navbar-brand" href="#">
-        <img src="https://img1.pngdownload.id/20180716/qax/kisspng-logo-person-user-person-icon-5b4d2bd1eadf26.611780081531784145962.jpg" width="50" height="50" alt="person">
+        <img src="https://png.pngitem.com/pimgs/s/4-40070_user-staff-man-profile-user-account-icon-jpg.png" width="50" height="50" alt="person">
         </a>
       </form>
     </div>

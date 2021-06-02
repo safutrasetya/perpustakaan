@@ -10,7 +10,8 @@
     <title></title>
   </head>
   <body>
-    <div class="container p-5 bg-dark border text-white">
+    <div class="jumbotron fluid bg-dark">
+    <div class="container p-5 bg-white border text-dark">
       <h1>TEST</h1>
       <div class="jumbotron bg-warning">
         <div class="row">
