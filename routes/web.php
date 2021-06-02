@@ -31,3 +31,6 @@ Route::get('/login', function(){
 Route::get('/daftar', function(){
   return view('halregister');
 });
+Route::get('/halpublisher', function () {
+    return view('halpublisher');
+});
