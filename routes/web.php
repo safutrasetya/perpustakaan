@@ -25,3 +25,9 @@ Route::get('/test', function(){
 Route::get('/member', function(){
   return view('halprofmember');
 });
+Route::get('/login', function(){
+  return view('hallogin');
+});
+Route::get('/daftar', function(){
+  return view('halregister');
+});
