@@ -15,6 +15,7 @@
     <title></title>
   </head>
   <body>
+    @include('layout.v_navbar')
     <div class="jumbotron">
       <div class="container">
         <div classs"card">

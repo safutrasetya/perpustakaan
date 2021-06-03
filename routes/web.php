@@ -28,9 +28,15 @@ Route::get('/member', function(){
 Route::get('/login', function(){
   return view('hallogin');
 });
-Route::get('/daftar', function(){
+Route::get('/register', function(){
   return view('halregister');
 });
-Route::get('/halpublisher', function () {
-    return view('halpublisher');
+Route::get('/daftaruser', function () {
+    return view('daftaruser');
+});
+Route::get('/daftarbuku', function () {
+    return view('daftarbuku');
+});
+Route::get('/cariuser', function () {
+    return view('halcariuser');
 });

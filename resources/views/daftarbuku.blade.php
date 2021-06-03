@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    @extends('layout.v_navbar')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,12 +14,13 @@
     <title></title>
   </head>
   <body>
-    <div class="jumbotron bg-dark text-center text-white" style="margin-bottom:0">
-      <div class="container">
+    @include('layout.v_navbar');
+    <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
+      <div class="container pt-4">
         <p class="display-1">DAFTAR BUKUKU</p>
       </div>
     </div>
-    <div class="jumbotron bg-info">
+    <div class="jumbotron bg-warning">
       <div class="container pt-5">
         <table class="table table-bordered table-secondary table-striped">
             <thead>
