@@ -16,7 +16,8 @@ class CreateTabelBukusTable extends Migration
     {
         Schema::create('tabel_bukus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_publisher');
+            $table->unsignedBigInteger('id_publisher');
+            $table->foreign('id_publisher')->references('id')->on('akuns')->onDelete('restrict');
             $table->string('cover')->nullable();
             $table->string('judul');
             $table->string('penerbit');
