@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//use\app\Http\Controllers\BukuController;
 
 Route::get('/', function () {
     return view('halutama');
@@ -34,9 +35,12 @@ Route::get('/register', function(){
 Route::get('/daftaruser', function () {
     return view('daftaruser');
 });
-Route::get('/daftarbuku', function () {
-    return view('daftarbuku');
-});
+
+use App\Http\Controllers\BukuController;
+Route::get('/daftarbuku',[BukuController::class,'index']);
+    //return view('daftarbuku')};
+
 Route::get('/cariuser', function () {
     return view('halcariuser');
 });
+?>
