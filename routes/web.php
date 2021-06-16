@@ -32,9 +32,11 @@ Route::get('/login', function(){
 Route::get('/register', function(){
   return view('halregister');
 });
-Route::get('/daftaruser', function () {
-    return view('daftaruser');
-});
+
+use App\Http\Controllers\AkunController;
+Route::get('/daftaruser', [AkunController::class,'index']); 
+    // return view('daftaruser');
+
 
 use App\Http\Controllers\BukuController;
 Route::get('/daftarbuku',[BukuController::class,'index']);
