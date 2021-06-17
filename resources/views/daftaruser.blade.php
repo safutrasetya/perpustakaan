@@ -43,7 +43,9 @@
                       <td>{{$akun->email}}</td>
                       <td>{{$akun->password}}</td>
                       <td>{{$akun->id}}</td>
-                      <td></td>
+                      <td>
+                        <a href="{{ url('edit/'.$akun->id) }}" class="btn btn-primary">Edit</a>
+                      </td>
                   </tr>
                   @endforeach
                   <!--<tr>

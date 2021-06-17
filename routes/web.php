@@ -77,4 +77,8 @@ Route::get('/daftarbuku',[BukuController::class,'index']);
 Route::get('/cariuser', function () {
     return view('halcariuser');
 });
+
+Route::get('/edituser', function () {
+    return view('haledituser');
+});
 ?>
