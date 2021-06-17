@@ -28,7 +28,7 @@
           <form method="POST" action="editbuku" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-              <input hidden disabled type="text" class="form-control" name="id" placeholder="Masukkan idbuku" value="{{$edit['id']}}" required>
+              <input hidden type="text" class="form-control" name="id" placeholder="Masukkan idbuku" value="{{$edit['id']}}" required>
             </div>
               <div class="form-group">
                 <label for="">Cover</label>
@@ -36,7 +36,7 @@
                 <input type="file" class="form-control" name="cover" placeholder="Masukkan cover?">
               </div>
               <div class="form-group">
-                <input hidden disabled type="text" class="form-control" name="covername" value="{{$edit['cover']}}" required>
+                <input hidden type="text" class="form-control" name="covername" value="{{$edit['cover']}}" required>
               </div>
               <div class="form-group">
                 <label for="">Id Publisher</label>
