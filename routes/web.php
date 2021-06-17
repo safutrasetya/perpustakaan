@@ -7,6 +7,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\EditAkun;
 use App\Http\Controllers\EditBuku;
+use App\Http\Controllers\Halutama;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +22,7 @@ use App\Http\Controllers\EditBuku;
 Route::get('/', function () {
     return view('hallogin');
 });
-Route::view("halutama",'halutama');
-Route::get('/test', function(){
-  return view('test');
-});
+
 Route::get('/member', function(){
   return view('halprofmember');
 });
@@ -99,3 +97,5 @@ Route::get('/daftaruser',[AkunController::class,'index']);
 Route::get('/edituser', function () {
     return view('haledituser');
 });
+
+Route::get('/halutama',[Halutama::class,'index']);

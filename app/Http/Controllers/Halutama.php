@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TabelBuku;
-class BukuController extends Controller
+class Halutama extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class BukuController extends Controller
     public function index()
     {
         $bukus = TabelBuku::all();
-        return view ('daftarbuku', compact('bukus'));
-        
+        //return view ('daftarbuku', compact('bukus'));
+        return view ('halutama', compact('bukus'));
     }
 
     /**
