@@ -15,7 +15,7 @@ class BukuController extends Controller
     {
         $bukus = TabelBuku::all();
         return view ('daftarbuku', compact('bukus'));
-        return view ('halutama', compact('bukus'));
+        
     }
 
     /**
