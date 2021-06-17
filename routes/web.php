@@ -64,8 +64,6 @@ Route::get('/register', function(){
 Route::post("registernew",[RegisterAkun::class,'Regist']);
 Route::view('/halberhasil','halberhasil');
 //UNTUK REGISTER^^^^^^^
-
-
 use App\Http\Controllers\AkunController;
 Route::get('/daftaruser', [AkunController::class,'index']);
     return view('daftaruser');
@@ -73,7 +71,7 @@ Route::get('/daftaruser', [AkunController::class,'index']);
 
 use App\Http\Controllers\BukuController;
 Route::get('/daftarbuku',[BukuController::class,'index']);
-    return view('daftarbuku')};
+    return view('daftarbuku');
 
 
 Route::get('/cariuser', function () {
