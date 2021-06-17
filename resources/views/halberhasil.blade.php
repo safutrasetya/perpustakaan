@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!--BOOTSTRAP JQUERY-->
@@ -15,15 +13,13 @@
     <title></title>
   </head>
   <body>
-    @include('layout.v_navbar')
-    <div class="jumbotron">
-      <div class="container">
-        <div classs"card">
-          <div class="card-body">
-            <form action="" method="POST">
-              <input type"text" class="form-control" name="pencarian">
-              <button type="submit" class="btn btn-Primary" name="cari">Cari</button>
-            </form>
+    <div class="jumbotron bg-success">
+      <div class="container bg-info">
+        <div class="card">
+          <div class="card-body text-center">
+            <h2 class="display-2">!{{$success}}!</h2><br>
+            <a href="/hallogin"><button class="btn btn-success">Kembali ke Login</button></a>
+
           </div>
         </div>
       </div>

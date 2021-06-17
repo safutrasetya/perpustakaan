@@ -23,10 +23,11 @@
         <!--KOTAK DAFTAR BEGIN-->
         <div class="card" style="margin:auto">
           <div class="card-body">
-            <form action="" method="POST" class="needs-validation" novalidate>
+            <form action="registernew" method="POST" class="needs-validation" novalidate>
+              @csrf
               <div class=form-group>
                 <label for="username">Username</label>
-                <input type="text" id="nama" class="form-control" name="user" placeholder="Masukkan username" required>
+                <input type="text" id="nama" class="form-control" name="username" placeholder="Masukkan username" required>
                 <div class="valid-feedback">Valid</div>
                 <div class="invalid-feedback">Invalid</div>
               </div>
@@ -38,14 +39,10 @@
               </div>
               <div class=form-group>
                 <label for="username">Password</label>
-                <input type="text" id="password" class="form-control" name="pwd" placeholder="Masukkan Password" required>
+                <input type="text" id="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                 <div class="valid-feedback">Valid</div>
                 <div class="invalid-feedback">Invalid</div>
               </div>
-              <div class=form-group><!--ISI LEVEL AKUN JANGAN LUPA-->
-                <input type="text" id="level" class="form-control" name="level" placeholder="Masukkan username" required hidden>
-              </div>
-              <!--URUS LEVEL AKUN JANGAN LUPA ASDASD-->
                 <button type="reset" class="btn btn-primary" name="btnReset">Reset</button>
               <div class="float-right">
                 <button type="submit" class="btn btn-primary" name="btnDaftar">REGISTER</button>

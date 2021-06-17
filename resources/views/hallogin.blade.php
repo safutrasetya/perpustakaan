@@ -25,7 +25,8 @@
         <!--KOTAK LOGIN BEGIN-->
         <div class="card" style="margin:auto">
           <div class="card-body">
-            <form action="" method="POST" class="needs-validation" novalidate>
+            <form action="user" method="POST" class="needs-validation" novalidate>
+              @csrf
               <div class=form-group>
                 <label for="username">Username</label>
                 <input type="text" id="nama" class="form-control" name="user" placeholder="Masukkan username" required>
@@ -34,7 +35,7 @@
               </div>
               <div class=form-group>
                 <label for="username">Password</label>
-                <input type="text" id="password" class="form-control" name="pwd" placeholder="Masukkan Password" required>
+                <input type="text" id="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                 <div class="valid-feedback">Valid</div>
                 <div class="invalid-feedback">Invalid</div>
               </div>
@@ -44,7 +45,7 @@
               </div>
             </form>
             <div class="float-right py-2">
-              <a href="/daftar"><button class="btn btn-outline-primary">DAFTAR</button></a>
+              <a href="/register"><button class="btn btn-outline-primary">DAFTAR</button></a>
             </div>
           </div>
         </div>

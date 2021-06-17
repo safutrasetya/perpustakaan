@@ -15,11 +15,20 @@
         <li class="nav-item">
           <a class="nav-link" href="#">ABOUT</a>
         </li>
+        @if(session('level')==1)
         <li class="nav-item">
         <a class="nav-link" href="/daftarbuku">DAFTAR BUKU</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="/daftaruser">DAFTAR AKUN</a>
+        </li>
+        @elseif(session('level')==2)
+        <li class="nav-item">
+        <a class="nav-link" href="/daftaruser">DAFTAR AKUN</a>
+        </li>
+        @endif
+        <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

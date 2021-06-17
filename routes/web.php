@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\RegisterAkun;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,23 +15,54 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('halutama');
+    return view('hallogin');
 });
-Route::get('/halutama', function() {
-  return view('halutama');
-});
+Route::view("halutama",'halutama');
 Route::get('/test', function(){
   return view('test');
 });
 Route::get('/member', function(){
   return view('halprofmember');
 });
-Route::get('/login', function(){
+
+//UNTUK LOGINvvv
+Route::post("user",[UserAuth::class,'userlogin']);
+Route::post("password",[UserAuth::class,'userlogin']);
+Route::get('/logout', function () {
+  if(session()->has('username')){
+    session()->pull('username');
+    session()->pull('password');
+    session()->pull('id');
+    session()->pull('email');
+    session()->pull('level');
+  }
+  return redirect('hallogin');
+});
+Route::get('hallogin', function () {
+  if(session()->has('username')){
+    return redirect('halutama');
+  }
   return view('hallogin');
 });
+Route::get('halutama', function () {
+  if(!session()->has('username')){
+    return redirect('hallogin');
+  }
+  return view('halutama');
+});
+Route::get('/halerror', function () {
+    return view('halerror');
+});
+//UNTUK LOGIN ^^^^
+
+//UNTUK REGISTERvvvvv
 Route::get('/register', function(){
   return view('halregister');
 });
+Route::post("registernew",[RegisterAkun::class,'Regist']);
+Route::view('/halberhasil','halberhasil');
+//UNTUK REGISTER^^^^^^^
+
 Route::get('/daftaruser', function () {
     return view('daftaruser');
 });
