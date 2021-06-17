@@ -40,7 +40,7 @@
               </div>
               <div class="form-group">
                 <label for="">Id Publisher</label>
-                <input disabled type="text" class="form-control" name="idpublisher" placeholder="Masukkan" value="{{$edit['id_publisher']}}" required>
+                <input type="text" class="form-control" name="idpublisher" placeholder="Masukkan" value="{{$edit['id_publisher']}}" required>
               </div>
                 <div class="form-group">
                   <label for="">Judul</label>
