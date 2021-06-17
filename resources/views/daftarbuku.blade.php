@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -13,6 +14,54 @@
     <!--END BOOTSTRAP JQUERY-->
     <title></title>
   </head>
+  <style>
+.table{
+  table-layout: fixed;
+  width: 100%;
+  text-align: justify;
+}
+.row-Cover
+{
+    width: 180%;
+    height:100%;
+    text-align: center;
+}
+.row-Judul
+{
+    width: 100%;
+    text-align: center;
+}
+.row-Penerbit
+{
+    width: 110%;
+    text-align: center;
+}
+.row-Pengarang
+{
+    width: 150%;
+}
+.row-TT
+{
+    width: 200%;
+    text-align: center;
+}
+.row-Sinopsis
+{
+    width: 600%;
+    height: auto;
+    text-align: center;
+}
+.row-Toko
+{
+    width: 200%;
+}
+.row-Action
+{
+    width: 100%;
+}
+
+
+  </style>
   <body>
     @include('layout.v_navbar');
     <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
@@ -20,43 +69,46 @@
         <p class="display-1">DAFTAR BUKUKU</p>
       </div>
     </div>
+
     <div class="jumbotron bg-warning">
-      <div class="container pt-5">
+      <div class="container-fluid">
         <table class="table table-bordered table-secondary table-striped">
             <thead>
                 <tr>
-                    <th>Cover</th>
-                    <th>Judul</th>
-                    <th>Penerbit</th>
-                    <th>Pengarang</th>
-                    <th>Tahun Terbit</th>
-                    <th>Sinopsis</th>
-                    <th>Tersedia ditoko:</th>
-                    <th>Action</th>
+                    <th class="row-1 row-Cover">Cover</th>
+                    <th class="row-2 row-Judul">Judul</th>
+                    <th class="row-3 row-Penerbit">Penerbit</th>
+                    <th class="row-4 row-Pengarang">Pengarang</th>
+                    <th class="row-5 row-TT">Tahun Terbit</th>
+                    <th class="row-6 row-Sinopsis">Sinopsis</th>
+                    <th class="row-7 row-Toko">Tersedia ditoko:</th>
+                    <th class="row-8 row-Action">Action</th>
                 </tr>
             </thead>
 
             <tbody>
+                @foreach($bukus as $buku)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><img src = "img/{{$buku->cover}}" alt ="" width="120x" height="200px"></td>
+                    <td>{{$buku->judul}}</td>
+                    <td>{{$buku->penerbit}}</td>
+                    <td>{{$buku->pengarang}}</td>
+                    <td>{{$buku->Tahun_Terbit}}</td>
+                    <td>{{$buku->sinopsis}}</td>
+                    <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @endforeach
+                 <!-- <tr>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                 </tr> -->
             </tbody>
         </table>
     </div>

@@ -36,22 +36,24 @@
               </thead>
 
               <tbody>
+              @foreach($akuns as $akun)
                   <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>{{$akun->id}}</td>
+                      <td>{{$akun->username}}</td>
+                      <td>{{$akun->email}}</td>
+                      <td>{{$akun->password}}</td>
+                      <td>{{$akun->id}}</td>
                       <td></td>
                   </tr>
-                  <tr>
+                  @endforeach
+                  <!--<tr>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
-                  </tr>
+                  </tr>-->
               </tbody>
           </table>
       </div>
