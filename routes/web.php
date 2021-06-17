@@ -69,5 +69,13 @@ Route::view('/halberhasil','halberhasil');
 Route::get('/cariuser', function () {
     return view('halcariuser');
 });
+<<<<<<< HEAD
 Route::get('/daftarbuku',[BukuController::class,'index']);
 Route::get('/daftaruser',[AkunController::class,'index']);
+=======
+
+Route::get('/edituser', function () {
+    return view('haledituser');
+});
+?>
+>>>>>>> 988971fc2e27252117d3f306d784ff0bab444f92
