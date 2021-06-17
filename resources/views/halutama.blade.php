@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style media="screen">
+    /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: blue;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: black;
+    }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -36,19 +59,21 @@
         <div class="jumbotron">
           <div class="card">
             <div class="row">
+              @foreach($bukus as $buku)
               <div class="col-md-3">
-                <h1>GAMBAR<br>GAMBAR<br>GAMBAR</h1>
+                <h1><img src="img/{{$buku->cover}}" alt ="" width="150px" height="200px"></h1>
               </div>
               <div class="col-md-4">
-                <h4>Judul : </h4>
-                <h4>Penerbit : </h4>
-                <h4>Pengarang :  </h4>
-                <h4>Tahun Terbit : </h4>
+                <h4>Judul        : {{$buku->judul}}</h4>
+                <h4>Penerbit     : {{$buku->penerbit}}</h4>
+                <h4>Pengarang    :  {{$buku->pengarang}}</h4>
+                <h4>Tahun Terbit : {{$buku->Tahun_Terbit}}</h4>
               </div>
-              <div class="col-md-3">
-                <h4>SINOPSISSU</h4>
-                <p>CERITA GINI-GINI GINIGINIGNIGINGINIGIGNIGINIG NIGNIGNIGINGINGINGINGIN GINIGNIGNIGINGNI</p>
+              <div class="sinopsis col-md-3">
+                <h4>SINOPSIS</h4>
+                <textarea maxlength="200" cols="50" rows="7" style="text-align:justify">{{$buku->sinopsis}}</textarea>
               </div>
+              @endforeach
             </div>
           </div>
           <h4></h4>
