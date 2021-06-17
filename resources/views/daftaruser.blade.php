@@ -42,9 +42,13 @@
                       <td>{{$akun->username}}</td>
                       <td>{{$akun->email}}</td>
                       <td>{{$akun->password}}</td>
-                      <td>{{$akun->id}}</td>
+                      <td>{{$akun->level}}</td>
                       <td>
-                        <a href="{{ url('edit/'.$akun->id) }}" class="btn btn-primary">Edit</a>
+                        <form action="getuser" method="POST" novalidate>
+                          @csrf
+                          <input type="text" id="id" class="form-control" name="id" hidden required value="{{$akun->id}}">
+                          <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
+                        </form>
                       </td>
                   </tr>
                   @endforeach

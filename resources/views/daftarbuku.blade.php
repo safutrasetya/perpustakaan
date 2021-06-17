@@ -71,6 +71,9 @@
 
     <div class="jumbotron bg-warning">
       <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+          <a href="/haltambahbuku" class="btn btn-success text-center">Buku Baru</a>
+        </div>
         <table class="table table-bordered table-secondary table-striped">
             <thead>
                 <tr>
@@ -95,7 +98,13 @@
                     <td>{{$buku->Tahun_Terbit}}</td>
                     <td>{{$buku->sinopsis}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
-                    <td></td>
+                    <td>
+                      <form action="getbuku" method="POST" novalidate>
+                        @csrf
+                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku->id}}">
+                        <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
+                      </form>
+                    </td>
                 </tr>
                 @endforeach
                  <!-- <tr>

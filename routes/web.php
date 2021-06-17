@@ -5,6 +5,8 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\RegisterAkun;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\EditAkun;
+use App\Http\Controllers\EditBuku;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +28,28 @@ Route::get('/test', function(){
 Route::get('/member', function(){
   return view('halprofmember');
 });
+//UNTUKEDITUSERvvvvvvvv
+Route::post("getuser",[EditAkun::class,'Getuser']);
+Route::get('/haledituser', function(){
+  return view('haledituser');
+});
+Route::post("edituser",[EditAkun::class,'Ubahakun']);
 
+//UNTUKEDITUSER^^^^^^^
+//UNTUKEDIT  BUKU  vvvvvvvv
+Route::post("getbuku",[EditBuku::class,'Getbuku']);
+Route::get('/haleditbuku', function(){
+  return view('haleditbuku');
+});
+Route::post("editbuku",[EditBuku::class,'Ubahbuku']);
+
+//UNTUKEDIT  BUKU  ^^^^^^^^
+//UNTUK TAMBAH BUKU^^^^^^^^^
+Route::get('/haltambahbuku', function(){
+  return view('haltambahbuku');
+});
+Route::post("tambahbuku",[EditBuku::class,'Tambahbuku']);
+//UNTUK TAMBAH BUKU ^^^^^^^^
 //UNTUK LOGINvvv
 Route::post("user",[UserAuth::class,'userlogin']);
 Route::post("password",[UserAuth::class,'userlogin']);
