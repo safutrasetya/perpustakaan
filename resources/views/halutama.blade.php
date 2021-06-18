@@ -71,7 +71,7 @@
               </div>
               <div class="sinopsis col-md-3">
                 <h4>SINOPSIS</h4>
-                <textarea maxlength="200" cols="50" rows="7" style="text-align:justify">{{$buku->sinopsis}}</textarea>
+                <textarea readonly maxlength="200" cols="50" rows="7" style="text-align:justify">{{$buku->sinopsis}}</textarea>
               </div>
               @endforeach
             </div>
