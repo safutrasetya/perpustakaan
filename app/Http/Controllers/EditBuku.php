@@ -72,5 +72,6 @@ class EditBuku extends Controller
       $baru->cover=$namacover;
       $baru->save();
       return redirect('daftarbuku');
+
     }
 }

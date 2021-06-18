@@ -15,33 +15,12 @@
   </head>
   <style>
 .table{
-  table-layout: fixed;
-  width: 100%;
   text-align: justify;
 }
 .row-Cover
 {
-    width: 180%;
+    width: 20%;
     height:100%;
-    text-align: center;
-}
-.row-Judul
-{
-    width: 100%;
-    text-align: center;
-}
-.row-Penerbit
-{
-    width: 110%;
-    text-align: center;
-}
-.row-Pengarang
-{
-    width: 150%;
-}
-.row-TT
-{
-    width: 200%;
     text-align: center;
 }
 .row-Sinopsis
@@ -84,7 +63,7 @@
                     <th class="row-5 row-TT">Tahun Terbit</th>
                     <th class="row-6 row-Sinopsis">Sinopsis</th>
                     <th class="row-7 row-Toko">Tersedia ditoko:</th>
-                    <th class="row-8 row-Action">Action</th>
+                    <th colspan =2>Action</th>
                 </tr>
             </thead>
 
@@ -105,7 +84,6 @@
                         <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                       </form>
                     </td>
-                    <td>
                     <td>
                         <a href="/daftarbuku/delete/ {{$buku->id}}" class= "btn btn-danger">Delete</a>
                     </td>

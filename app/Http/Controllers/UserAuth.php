@@ -38,22 +38,6 @@ class UserAuth extends Controller
         $error = "USER NOT FOUND";
         return view('halerror')->with('error',$error);
       }
-
-      //return view('halutama')->with('test',$cariarray);
-
-
-
-      //THIS WORKED VVV
-      // $datauser= $req->input();
-      // $req->session()->put('user',$datauser['user']);
-      // $req->session()->put('password',$datauser['password']);
-      // session('user');
-      // session('password');
-      // $vusername = $datauser['user'];
-      // $vpassword = $datauser['password'];
-      // return redirect('halutama');
-      //THAT WORKED ^^^^^^^^^^^^
-
     }
 
 }
