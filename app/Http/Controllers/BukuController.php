@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 use App\Models\TabelBuku;
 class BukuController extends Controller
@@ -16,6 +16,14 @@ class BukuController extends Controller
         $bukus = TabelBuku::all();
         return view ('daftarbuku', compact('bukus'));
         
+    }
+
+    public function delete($id)
+    {
+
+        DB::table('tabel_bukus')->where('id', $id)->delete();
+
+        return redirect('/daftarbuku')->with('message','Data berhasil dihapus');
     }
 
     /**

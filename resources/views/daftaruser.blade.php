@@ -31,7 +31,7 @@
                       <th>Email</th>
                       <th>Password</th>
                       <th>Level</th>
-                      <th>Action</th>
+                      <th colspan =2 >Action</th>
                   </tr>
               </thead>
 
@@ -49,6 +49,9 @@
                           <input type="text" id="id" class="form-control" name="id" hidden required value="{{$akun->id}}">
                           <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                         </form>
+                      </td>
+                      <td>
+                          <a href="/daftaruser/delete/ {{$akun->id}}" class= "btn btn-danger">Delete</a>
                       </td>
                   </tr>
                   @endforeach

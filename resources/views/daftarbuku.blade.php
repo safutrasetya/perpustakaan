@@ -105,6 +105,10 @@
                         <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                       </form>
                     </td>
+                    <td>
+                    <td>
+                        <a href="/daftarbuku/delete/ {{$buku->id}}" class= "btn btn-danger">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
                  <!-- <tr>
