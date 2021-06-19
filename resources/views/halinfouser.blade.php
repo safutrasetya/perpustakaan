@@ -44,7 +44,7 @@
             <form class="form-inline" action="getusersession" method="POST">
               @csrf
               <div class="p-2">
-                <input id="id" readonly class="form-control" type=text value="{{session('id')}}" name="id">
+                <input hidden id="id" readonly class="form-control" type=text value="{{session('id')}}" name="id">
                 <button class="btn btn-success" type="submit" name="btnUbah">Ubah Info Akun</button>
               </div>
             </form>
