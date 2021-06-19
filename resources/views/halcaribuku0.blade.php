@@ -73,7 +73,6 @@ td{
                     <th class="row-5 row-TT">Tahun Terbit</th>
                     <th class="row-6 row-Sinopsis">Sinopsis</th>
                     <th class="row-7 row-Toko">Tersedia ditoko:</th>
-                    <th colspan =2>Action</th>
                 </tr>
             </thead>
 
@@ -88,16 +87,6 @@ td{
                     <td>{{$buku->Tahun_Terbit}}</td>
                     <td class="sinopsis">{{Illuminate\Support\Str::of($buku->sinopsis)->words(30)}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
-                    <td>
-                      <form action="getbuku" method="POST" novalidate>
-                        @csrf
-                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku->id}}">
-                        <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
-                      </form>
-                    </td>
-                    <td>
-                        <a href="/daftarbuku/delete/ {{$buku->id}}" class= "btn btn-danger">Delete</a>
-                    </td>
                 </tr>
                 @endforeach
               @else
