@@ -41,12 +41,18 @@ Route::post("edituser",[EditAkun::class,'Ubahakun']);
 Route::post("getusersession",[EditAkun::class,'Getusersession']);
 Route::post("editusersession",[EditAkun::class,'Ubahakunsession']);
 Route::get('/haledituser0', function(){
+  if(!session()->has('username')){
+    return redirect('hallogin');
+  }
   return view('haledituser0');
 });
 //UNTUKEDITUSER^^^^^^^
 //UNTUKEDIT  BUKU  vvvvvvvv
 Route::post("getbuku",[EditBuku::class,'Getbuku']);
 Route::get('/haleditbuku', function(){
+  if(!session()->has('username')){
+    return redirect('hallogin');
+  }
   return view('haleditbuku');
 });
 Route::post("editbuku",[EditBuku::class,'Ubahbuku']);
@@ -98,6 +104,9 @@ Route::view('/halberhasil','halberhasil');
 //UNTUK REGISTER^^^^^^^
 
 Route::get('/cariuser', function () {
+  if(!session()->has('username')){
+    return redirect('hallogin');
+  }
     return view('halcariuser');
 });
 
@@ -117,6 +126,10 @@ Route::get('/daftarbuku/delete/{id}', [BukuController::class,'delete']);
 Route::get('/halbuku/{id}',[BukuController::class,'tampil'])->name('buku');
 
 Route::get('/caribuku',[CariBuku::class, 'search'])->name('web.search');
+Route::get('/caribuku0',[CariBuku::class, 'search2'])->name('web.search2');
+Route::get('/halcaribuku0', function () {
+    return view('halcaribuku0');
+});
 
 Route::get('/cariuser',[UserController::class, 'searchuser'])->name('user.search');
 Route::get('/about', function(){

@@ -8,6 +8,9 @@ class EditBuku extends Controller
 {
     //
     function Getbuku(Request $req){
+      if(!session()->has('username')){
+        return redirect('hallogin');
+      }
       $dataget = $req->input();
       $check = DB::select("select * from tabel_bukus where id = :id", ['id'=> $dataget['idbuku']]);
       $count = count($check);

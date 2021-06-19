@@ -49,8 +49,7 @@
           <div class="d-flex justify-content-center">
             <form class="form-inline" action="#">
               <div class="p-2">
-                <input class="form-control" type="search" placeholder="Cari buku...">
-                <button class="btn btn-success" type="submit">Cari</button>
+                <a class="btn btn-success" href="/halcaribuku0">Cari buku</a>
               </div>
             </form>
           </div>

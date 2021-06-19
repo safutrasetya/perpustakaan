@@ -9,6 +9,9 @@ class UserController extends Controller
 
       public function searchuser(Request $request)
       {
+        if(!session()->has('username')){
+          return redirect('hallogin');
+        }
         if (isset($_GET['query'])){
           $search_text = $_GET['query'];
           $akuns = DB::table('akuns')->where('username','LIKE','%'.$search_text.'%')->paginate();

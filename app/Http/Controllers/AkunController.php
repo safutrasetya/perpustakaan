@@ -13,6 +13,9 @@ class AkunController extends Controller
      */
     public function index()
     {
+      if(!session()->has('username')){
+        return redirect('hallogin');
+      }
       $akuns = akun::paginate(5);
       return view ('daftaruser',['akuns'=>$akuns]);
     }

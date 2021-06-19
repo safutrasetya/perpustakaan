@@ -13,6 +13,9 @@ class BukuController extends Controller
      */
     public function index()
     {
+      if(!session()->has('username')){
+        return redirect('hallogin');
+      }
       if(session('level')==1){
         $bukus = TabelBuku::paginate(5);
         return view ('daftarbuku',['bukus'=>$bukus]);
@@ -98,6 +101,9 @@ class BukuController extends Controller
     }
     public function tampil($id)
     {
+      if(!session()->has('username')){
+        return redirect('hallogin');
+      }
       //
       // $buku = DB::select("select * from tabel_bukus where id = :id", ['id'=> $id]);
       // return view('halbuku',['buku'=>$buku]);
