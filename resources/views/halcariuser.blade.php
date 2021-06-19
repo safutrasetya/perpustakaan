@@ -31,7 +31,7 @@
             <button type="submit" class="btn btn-primary">Search</button>
           </div>
         </form>
-        @if(isset($bukus))
+        @if(isset($akuns))
           <table class="table table-bordered table-secondary table-striped">
               <thead>
                   <tr>
@@ -45,8 +45,8 @@
               </thead>
 
               <tbody>
-                @if(count($bukus)>0)
-                  @foreach($bukus as $buku)
+                @if(count($akuns)>0)
+                  @foreach($akuns as $akun)
                   <tr>
                       <td>{{$akun->id}}</td>
                       <td>{{$akun->username}}</td>

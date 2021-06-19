@@ -89,7 +89,7 @@ td{
                     <td>{{$buku->penerbit}}</td>
                     <td>{{$buku->pengarang}}</td>
                     <td>{{$buku->Tahun_Terbit}}</td>
-                    <td class="sinopsis">{{Illuminate\Support\Str::of($buku->sinopsis)->words(30)}}</td>
+                    <td class="sinopsis">{{Illuminate\Support\Str::of($buku->sinopsis)->words(55)}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
                     <td>
                       <form action="getbuku" method="POST" novalidate>
