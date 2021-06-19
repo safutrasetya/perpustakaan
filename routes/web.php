@@ -23,8 +23,8 @@ Route::get('/', function () {
     return view('hallogin');
 });
 
-Route::get('/member', function(){
-  return view('halprofmember');
+Route::get('/halinfouser', function(){
+  return view('halinfouser');
 });
 //UNTUKEDITUSERvvvvvvvv
 Route::post("getuser",[EditAkun::class,'Getuser']);
@@ -33,6 +33,11 @@ Route::get('/haledituser', function(){
 });
 Route::post("edituser",[EditAkun::class,'Ubahakun']);
 
+Route::post("getusersession",[EditAkun::class,'Getusersession']);
+Route::post("editusersession",[EditAkun::class,'Ubahakunsession']);
+Route::get('/haledituser0', function(){
+  return view('haledituser0');
+});
 //UNTUKEDITUSER^^^^^^^
 //UNTUKEDIT  BUKU  vvvvvvvv
 Route::post("getbuku",[EditBuku::class,'Getbuku']);

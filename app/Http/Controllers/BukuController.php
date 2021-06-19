@@ -13,9 +13,14 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $bukus = TabelBuku::all();
-        return view ('daftarbuku', compact('bukus'));
-        
+      if(session('level')==1){
+        $bukus = TabelBuku::paginate(5);
+        return view ('daftarbuku',['bukus'=>$bukus]);
+      }else if(session('level')==2){
+        $bukus = TabelBuku::where('id', session('id'))->paginate(5);
+        return view ('daftarbuku',['bukus'=>$bukus]);
+      }
+
     }
 
     public function delete($id)

@@ -24,7 +24,7 @@
         </li>
         @elseif(session('level')==2)
         <li class="nav-item">
-        <a class="nav-link" href="/daftaruser">DAFTAR AKUN</a>
+        <a class="nav-link" href="/daftarbuku">DAFTAR BUKUKU</a>
         </li>
         @endif
         <li class="nav-item">
@@ -32,7 +32,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/halinfouser">
         <img src="https://png.pngitem.com/pimgs/s/4-40070_user-staff-man-profile-user-account-icon-jpg.png" width="50" height="50" alt="person">
         </a>
       </form>

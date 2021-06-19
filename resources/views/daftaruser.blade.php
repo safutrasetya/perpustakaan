@@ -38,20 +38,20 @@
               <tbody>
               @foreach($akuns as $akun)
                   <tr>
-                      <td>{{$akun->id}}</td>
-                      <td>{{$akun->username}}</td>
-                      <td>{{$akun->email}}</td>
-                      <td>{{$akun->password}}</td>
-                      <td>{{$akun->level}}</td>
+                      <td>{{$akun['id']}}</td>
+                      <td>{{$akun['username']}}</td>
+                      <td>{{$akun['email']}}</td>
+                      <td>{{$akun['password']}}</td>
+                      <td>{{$akun['level']}}</td>
                       <td>
                         <form action="getuser" method="POST" novalidate>
                           @csrf
-                          <input type="text" id="id" class="form-control" name="id" hidden required value="{{$akun->id}}">
+                          <input type="text" id="id" class="form-control" name="id" hidden required value="{{$akun['id']}}">
                           <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                         </form>
                       </td>
                       <td>
-                          <a href="/daftaruser/delete/ {{$akun->id}}" class= "btn btn-danger">Delete</a>
+                          <a href="/daftaruser/delete/ {{$akun['id']}}" class= "btn btn-danger">Delete</a>
                       </td>
                   </tr>
                   @endforeach
@@ -65,6 +65,15 @@
                   </tr>-->
               </tbody>
           </table>
+          <div class="d-flex justify-content-center text-center">
+            <span>{{$akuns->links()}}</span>
+          </div>
+          <!--vvvvvvBIAR GAK ERROR PAGINATIONNYA-->
+          <style>
+            .w-5{
+              display:none;
+            }
+          </style>
       </div>
     </div>
   </body>

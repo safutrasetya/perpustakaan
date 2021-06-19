@@ -70,27 +70,36 @@
             <tbody>
                 @foreach($bukus as $buku)
                 <tr>
-                    <td><img src = "img/{{$buku->cover}}" alt ="" width="120x" height="200px"></td>
-                    <td>{{$buku->judul}}</td>
-                    <td>{{$buku->penerbit}}</td>
-                    <td>{{$buku->pengarang}}</td>
-                    <td>{{$buku->Tahun_Terbit}}</td>
-                    <td>{{$buku->sinopsis}}</td>
+                    <td><img src = "img/{{$buku['cover']}}" alt ="" width="120x" height="200px"></td>
+                    <td>{{$buku['judul']}}</td>
+                    <td>{{$buku['penerbit']}}</td>
+                    <td>{{$buku['engarang']}}</td>
+                    <td>{{$buku['Tahun_Terbit']}}</td>
+                    <td>{{$buku['sinopsis']}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
                     <td>
                       <form action="getbuku" method="POST" novalidate>
                         @csrf
-                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku->id}}">
+                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku['id']}}">
                         <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                       </form>
                     </td>
                     <td>
-                        <a href="/daftarbuku/delete/ {{$buku->id}}" class= "btn btn-danger">Delete</a>
+                        <a href="/daftarbuku/delete/ {{$buku['id']}}" class= "btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center text-center">
+          <span>{{$bukus->links()}}</span>
+        </div>
+        <!--vvvvvvBIAR GAK ERROR PAGINATIONNYA-->
+        <style>
+          .w-5{
+            display:none;
+          }
+        </style>
     </div>
   </div>
   </body>

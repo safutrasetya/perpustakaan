@@ -13,8 +13,8 @@ class AkunController extends Controller
      */
     public function index()
     {
-        $akuns = akun::all();
-        return view ("daftaruser", compact('akuns'));
+      $akuns = akun::paginate(5);
+      return view ('daftaruser',['akuns'=>$akuns]);
     }
 
     public function delete($id)
@@ -88,6 +88,6 @@ class AkunController extends Controller
      */
     public function destroy($id)
     {
-        
+
     }
 }

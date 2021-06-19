@@ -44,7 +44,6 @@
           			<h1 class="display-1">Welcome to Perpus {{session('username')}}!</h1>
           		</marquee>
           <h1 class="text-white">Buku apa yang ingin kamu cari??</h1>
-          <h1 class="text-white">INI TEST apakah masuk?</h1>
         </div>
         <div class="card bg-secondary">
           <div class="d-flex justify-content-center">
