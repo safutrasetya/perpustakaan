@@ -50,23 +50,18 @@ td{
     @include('layout.v_navbar');
     <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
       <div class="container pt-4">
-        <p class="display-1">DAFTAR BUKU</p>
+        <p class="display-1">CARI BUKU</p>
       </div>
     </div>
 
     <div class="jumbotron bg-warning">
       <div class="container-fluid">
-        <form action="{{ route('web.search') }}" method "GET">
-        <div class="form-group">
+        <form action="{{ route('web.search2') }}" method "GET">
+
           <input type="text" class="form-control" name="query" placeholder="Search Here...">
-        </div>
-        <div class="form-group">
           <button type="submit" class="btn btn-primary">Search</button>
-        </div>
+
         </form>
-        <div class="d-flex justify-content-center">
-          <a href="/haltambahbuku" class="btn btn-success text-center">Buku Baru</a>
-        </div>
         @if(isset($bukus))
         <table class="table table-bordered table-secondary table-striped">
             <thead>
