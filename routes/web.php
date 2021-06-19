@@ -103,3 +103,5 @@ Route::get('/halutama',[Halutama::class,'index']);
 Route::get('/daftaruser/delete/{id}', [AkunController::class,'delete']);
 
 Route::get('/daftarbuku/delete/{id}', [BukuController::class,'delete']);
+
+Route::get('/halbuku/{id}',[BukuController::class,'tampil'])->name('buku');

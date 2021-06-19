@@ -15,7 +15,7 @@ class BukuController extends Controller
     {
         $bukus = TabelBuku::all();
         return view ('daftarbuku', compact('bukus'));
-        
+
     }
 
     public function delete($id)
@@ -90,5 +90,14 @@ class BukuController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function tampil($id)
+    {
+      //
+      // $buku = DB::select("select * from tabel_bukus where id = :id", ['id'=> $id]);
+      // return view('halbuku',['buku'=>$buku]);
+    $buku=TabelBuku::findOrFail($id);
+    return view('halbuku',compact('buku'));
+    //return view('halbuku',['buku'=>$buku]);
     }
 }

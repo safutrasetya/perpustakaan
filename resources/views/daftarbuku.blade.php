@@ -35,9 +35,15 @@
 }
 .row-Action
 {
+    text-align: center;
     width: 100%;
 }
-
+td{
+  text-align: center;
+}
+.sinopsis{
+  text-align: justify;
+}
 
   </style>
   <body>
@@ -71,11 +77,11 @@
                 @foreach($bukus as $buku)
                 <tr>
                     <td><img src = "img/{{$buku->cover}}" alt ="" width="120x" height="200px"></td>
-                    <td>{{$buku->judul}}</td>
+                    <td><a href="{{route('buku',$buku->id)}}" target="_blank">{{$buku->judul}}</a></td>
                     <td>{{$buku->penerbit}}</td>
                     <td>{{$buku->pengarang}}</td>
                     <td>{{$buku->Tahun_Terbit}}</td>
-                    <td>{{$buku->sinopsis}}</td>
+                    <td class="sinopsis">{{Illuminate\Support\Str::of($buku->sinopsis)->words(30)}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
                     <td>
                       <form action="getbuku" method="POST" novalidate>
