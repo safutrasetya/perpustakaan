@@ -83,7 +83,7 @@ Route::get('hallogin', function () {
   }
   return view('hallogin');
 });
-Route::get('halutama', function () {
+Route::get('/halutama', function () {
   if(!session()->has('username')){
     return redirect('hallogin');
   }

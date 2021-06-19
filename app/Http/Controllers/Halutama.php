@@ -13,6 +13,9 @@ class Halutama extends Controller
      */
     public function index()
     {
+      if(!session()->has('username')){
+        return redirect('hallogin');
+      }
         $bukus = TabelBuku::all();
         //return view ('daftarbuku', compact('bukus'));
         return view ('halutama', compact('bukus'));
