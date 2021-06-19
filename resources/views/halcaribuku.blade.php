@@ -50,7 +50,7 @@ td{
     @include('layout.v_navbar');
     <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
       <div class="container pt-4">
-        <p class="display-1">DAFTAR BUKUKU</p>
+        <p class="display-1">DAFTAR BUKU</p>
       </div>
     </div>
 
@@ -67,6 +67,7 @@ td{
         <div class="d-flex justify-content-center">
           <a href="/haltambahbuku" class="btn btn-success text-center">Buku Baru</a>
         </div>
+        @if(isset($bukus))
         <table class="table table-bordered table-secondary table-striped">
             <thead>
                 <tr>
@@ -82,6 +83,7 @@ td{
             </thead>
 
             <tbody>
+              @if(count($bukus)>0)
                 @foreach($bukus as $buku)
                 <tr>
                     <td><img src = "img/{{$buku->cover}}" alt ="" width="120x" height="200px"></td>
@@ -103,6 +105,11 @@ td{
                     </td>
                 </tr>
                 @endforeach
+              @else
+              <tr>
+                <td>No Result Found!</td>
+              </tr>
+              @endif
                  <!-- <tr>
                      <td></td>
                      <td></td>
@@ -115,6 +122,7 @@ td{
                  </tr> -->
             </tbody>
         </table>
+        @endif
     </div>
   </div>
   </body>
