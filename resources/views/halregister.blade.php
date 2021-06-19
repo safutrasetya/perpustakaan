@@ -32,14 +32,14 @@
                 <div class="invalid-feedback">Invalid</div>
               </div>
               <div class="form-group">
-                <label for="newusername">Email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" placeholder="Masukkan email baru" required>
                 <div class="valid-feedback">Valid</div>
                 <div class="invalid-feedback">Invalid</div>
               </div>
               <div class=form-group>
-                <label for="username">Password</label>
-                <input type="text" id="password" class="form-control" name="password" placeholder="Masukkan Password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                 <div class="valid-feedback">Valid</div>
                 <div class="invalid-feedback">Invalid</div>
               </div>
