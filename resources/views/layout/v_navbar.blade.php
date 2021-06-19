@@ -1,5 +1,5 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/halutama">
     <img src="https://s.clipartkey.com/mpngs/s/157-1572285_logo-buku-terbuka.png" width="80" height="50" alt="Malas Ngoding">
     LIBRARY
     </a>
@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/halutama">HOME<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ABOUT</a>
+          <a class="nav-link" href="/about">ABOUT</a>
         </li>
         @if(session('level')==1)
         <li class="nav-item">

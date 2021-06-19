@@ -22,7 +22,10 @@ use App\Http\Controllers\CariBuku;
 */
 
 Route::get('/', function () {
-    return view('hallogin');
+  if(session()->has('username')){
+    return redirect('halutama');
+  }
+  return view('hallogin');
 });
 
 Route::get('/halinfouser', function(){
@@ -116,3 +119,6 @@ Route::get('/halbuku/{id}',[BukuController::class,'tampil'])->name('buku');
 Route::get('/caribuku',[CariBuku::class, 'search'])->name('web.search');
 
 Route::get('/cariuser',[UserController::class, 'searchuser'])->name('user.search');
+Route::get('/about', function(){
+  return view('about');
+});
