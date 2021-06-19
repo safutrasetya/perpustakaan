@@ -5,9 +5,11 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\RegisterAkun;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditAkun;
 use App\Http\Controllers\EditBuku;
 use App\Http\Controllers\Halutama;
+use App\Http\Controllers\CariBuku;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -108,3 +110,9 @@ Route::get('/halutama',[Halutama::class,'index']);
 Route::get('/daftaruser/delete/{id}', [AkunController::class,'delete']);
 
 Route::get('/daftarbuku/delete/{id}', [BukuController::class,'delete']);
+
+Route::get('/halbuku/{id}',[BukuController::class,'tampil'])->name('buku');
+
+Route::get('/caribuku',[CariBuku::class, 'search'])->name('web.search');
+
+Route::get('/cariuser',[UserController::class, 'searchuser'])->name('user.search');

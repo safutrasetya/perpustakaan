@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!--BOOTSTRAP JQUERY-->
@@ -12,20 +11,76 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <!--END BOOTSTRAP JQUERY-->
+
     <title></title>
   </head>
   <body>
     @include('layout.v_navbar')
-    <div class="jumbotron">
+    <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
       <div class="container">
-        <div classs"card">
-          <div class="card-body">
-            <form action="" method="POST">
-              <input type"text" class="form-control" name="pencarian">
-              <button type="submit" class="btn btn-Primary" name="cari">Cari</button>
-            </form>
+        <p class="display-1 pt-5">DAFTAR USER</p>
+      </div>
+    </div>
+    <div class="jumbotron bg-success">
+      <div class="container pt-4">
+        <form action="{{ route('user.search') }}" method "GET">
+          <div class="form-group">
+            <input type="text" class="form-control" name="query" placeholder="Search Here...">
           </div>
-        </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        @if(isset($akuns))
+          <table class="table table-bordered table-secondary table-striped">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                      <th>Level</th>
+                      <th colspan =2 >Action</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                @if(count($akuns)>0)
+                  @foreach($akuns as $akun)
+                  <tr>
+                      <td>{{$akun->id}}</td>
+                      <td>{{$akun->username}}</td>
+                      <td>{{$akun->email}}</td>
+                      <td>{{$akun->password}}</td>
+                      <td>{{$akun->level}}</td>
+                      <td>
+                        <form action="getuser" method="POST" novalidate>
+                          @csrf
+                          <input type="text" id="id" class="form-control" name="id" hidden required value="{{$akun->id}}">
+                          <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
+                        </form>
+                      </td>
+                      <td>
+                          <a href="/daftaruser/delete/ {{$akun->id}}" class= "btn btn-danger">Delete</a>
+                      </td>
+                  </tr>
+                  @endforeach
+                @else
+                <tr>
+                  <td>No Result Found!</td>
+                </tr>
+                @endif
+                  <!--<tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr>-->
+              </tbody>
+          </table>
+          @endif
       </div>
     </div>
   </body>

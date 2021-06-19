@@ -23,6 +23,14 @@
     </div>
     <div class="jumbotron bg-success">
       <div class="container pt-4">
+        <form action="{{ route('user.search') }}" method "GET">
+          <div class="form-group">
+            <input type="text" class="form-control" name="query" placeholder="Search Here...">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
           <table class="table table-bordered table-secondary table-striped">
               <thead>
                   <tr>

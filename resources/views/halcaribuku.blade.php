@@ -50,7 +50,7 @@ td{
     @include('layout.v_navbar');
     <div class="jumbotron bg-secondary text-center text-white" style="margin-bottom:0">
       <div class="container pt-4">
-        <p class="display-1">DAFTAR BUKUKU</p>
+        <p class="display-1">DAFTAR BUKU</p>
       </div>
     </div>
 
@@ -67,6 +67,7 @@ td{
         <div class="d-flex justify-content-center">
           <a href="/haltambahbuku" class="btn btn-success text-center">Buku Baru</a>
         </div>
+        @if(isset($bukus))
         <table class="table table-bordered table-secondary table-striped">
             <thead>
                 <tr>
@@ -82,38 +83,46 @@ td{
             </thead>
 
             <tbody>
+              @if(count($bukus)>0)
                 @foreach($bukus as $buku)
                 <tr>
-                    <td><img src = "img/{{$buku['cover']}}" alt ="" width="120x" height="200px"></td>
-                    <td><a href="{{route('buku',$buku['id'])}}" target="_blank">{{$buku['judul']}}</a></td>
-                    <td>{{$buku['penerbit']}}</td>
-                    <td>{{$buku['pengarang']}}</td>
-                    <td>{{$buku['Tahun_Terbit']}}</td>
-                    <td class="sinopsis">{{Illuminate\Support\Str::of($buku['sinopsis'])->words(55)}}</td>
+                    <td><img src = "img/{{$buku->cover}}" alt ="" width="120x" height="200px"></td>
+                    <td><a href="{{route('buku',$buku->id)}}" target="_blank">{{$buku->judul}}</a></td>
+                    <td>{{$buku->penerbit}}</td>
+                    <td>{{$buku->pengarang}}</td>
+                    <td>{{$buku->Tahun_Terbit}}</td>
+                    <td class="sinopsis">{{Illuminate\Support\Str::of($buku->sinopsis)->words(30)}}</td>
                     <td><a href="{{$buku->toko}}" target="_blank">Klik Disini</td>
                     <td>
                       <form action="getbuku" method="POST" novalidate>
                         @csrf
-                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku['id']}}">
+                        <input type="text" id="id" class="form-control" name="idbuku" hidden required value="{{$buku->id}}">
                         <button type="submit" class="btn btn-primary" name="btnEdit">Edit</button>
                       </form>
                     </td>
                     <td>
-                        <a href="/daftarbuku/delete/ {{$buku['id']}}" class= "btn btn-danger">Delete</a>
+                        <a href="/daftarbuku/delete/ {{$buku->id}}" class= "btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
+              @else
+              <tr>
+                <td>No Result Found!</td>
+              </tr>
+              @endif
+                 <!-- <tr>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                 </tr> -->
             </tbody>
         </table>
-        <div class="d-flex justify-content-center text-center">
-          <span>{{$bukus->links()}}</span>
-        </div>
-        <!--vvvvvvBIAR GAK ERROR PAGINATIONNYA-->
-        <style>
-          .w-5{
-            display:none;
-          }
-        </style>
+        @endif
     </div>
   </div>
   </body>
