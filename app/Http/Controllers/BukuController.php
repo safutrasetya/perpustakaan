@@ -20,7 +20,7 @@ class BukuController extends Controller
         $bukus = TabelBuku::paginate(5);
         return view ('daftarbuku',['bukus'=>$bukus]);
       }else if(session('level')==2){
-        $bukus = TabelBuku::where('id', session('id'))->paginate(5);
+        $bukus = TabelBuku::where('id_publisher', session('id'))->paginate(5);
         return view ('daftarbuku',['bukus'=>$bukus]);
       }
 
