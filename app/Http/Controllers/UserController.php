@@ -12,6 +12,9 @@ class UserController extends Controller
         if(!session()->has('username')){
           return redirect('hallogin');
         }
+        if(session('level')!=1){
+          return redirect('halutama');
+        }
         if (isset($_GET['query'])){
           $search_text = $_GET['query'];
           $akuns = DB::table('akuns')->where('username','LIKE','%'.$search_text.'%')->paginate();
