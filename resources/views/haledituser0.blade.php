@@ -43,17 +43,7 @@
                   <input type="password" class="form-control" name="password" placeholder="Masukkan password" value="{{$edit['password']}}" required>
 
                 </div>
-                @if(session('level')==1)
-                  <div class="form-group">
-                    <label class="form-group">Level</label>
-                      <div class="form-group">
-                        <input type="radio"  id='admin' name="level" value="1"><label for="admin">Admin</label>
-                        <input type="radio"  id='publsher' name="level" value="2"><label for="publisher">Publisher</label>
-                        <input type="radio"  id='member' name="level" value="3" checked><label for="member">Member</label>
-                      </div>
-                  </div>
-                  @else
-                  @endif
+                
                   <div class="float-right">
                     <input type="submit" class="btn btn-primary" name="btnUpdate" value="Simpan perubahan">
                   </div>

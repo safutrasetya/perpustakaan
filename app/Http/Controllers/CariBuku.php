@@ -29,9 +29,6 @@ class CariBuku extends Controller
         if(!session()->has('username')){
           return redirect('hallogin');
         }
-        if(session('level')==3){
-          return redirect('halutama');
-        }
         if (isset($_GET['query'])){
           $search_text = $_GET['query'];
           $bukus = DB::table('tabel_bukus')->where('judul','LIKE','%'.$search_text.'%')->paginate();
